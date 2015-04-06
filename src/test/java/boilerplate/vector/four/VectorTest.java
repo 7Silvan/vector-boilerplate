@@ -1,6 +1,5 @@
-package boilerplate.vector.third;
+package boilerplate.vector.four;
 
-import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
@@ -9,11 +8,11 @@ public abstract class VectorTest
 {
     // ----------------------------------------------------------------
 
-    protected abstract Vector vector(int size); 
+    protected abstract AbstractVector vector(int size); 
 
-    protected abstract Vector vector(double ... elements);
+    protected abstract AbstractVector vector(double ... elements);
     
-    protected double[] elementsOf(Vector vector)
+    protected double[] elementsOf(AbstractVector vector)
     {
         double[] elements = new double[vector.size()];
         for (int i = 0; i < elements.length; i++)
@@ -41,7 +40,7 @@ public abstract class VectorTest
     @Test 
     public void testSet()
     {
-        Vector vector = vector(10);
+        AbstractVector vector = vector(10);
         vector.set(0, 42);
         vector.set(5, 13);
         vector.set(9, 22);
@@ -96,7 +95,7 @@ public abstract class VectorTest
     {
         double[] elements = {5,8,2,4,7,6,1,3,9};
         double[] sorted   = {1,2,3,4,5,6,7,8,9};
-        Vector vector = vector(elements);
+        AbstractVector vector = vector(elements);
         vector.sort();
         assertArrayEquals(sorted, elementsOf(vector), EPSILON);
     }
@@ -119,7 +118,7 @@ public abstract class VectorTest
     @Test
     public void testAdd()
     {
-        Vector vector = vector(1,2,3,4,5,6);
+        AbstractVector vector = vector(1,2,3,4,5,6);
         vector.add(vector(2,3,4,5,6,7));
         assertArrayEquals(new double[] {3,5,7,9,11,13}, elementsOf(vector), EPSILON);
     }
@@ -139,7 +138,7 @@ public abstract class VectorTest
     @Test
     public void testSubtract()
     {
-        Vector vector = vector(2,3,4,5,6,7);
+        AbstractVector vector = vector(2,3,4,5,6,7);
         vector.subtract(vector(1,2,3,4,5,6));
         assertArrayEquals(new double[] {1,1,1,1,1,1}, elementsOf(vector), EPSILON);
     }
@@ -159,7 +158,7 @@ public abstract class VectorTest
     @Test
     public void testMultiply()
     {
-        Vector vector = vector(1,2,3,4,5,6);
+        AbstractVector vector = vector(1,2,3,4,5,6);
         vector.multiply(vector(2,3,4,5,6,7));
         assertArrayEquals(new double[] {2,6,12,20,30,42}, elementsOf(vector), EPSILON);
     }

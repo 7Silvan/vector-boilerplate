@@ -1,15 +1,16 @@
-package boilerplate.vector.third;
+package boilerplate.vector.four;
+
 
 public class ArrayVectorTest extends VectorTest
 {
     @Override
-    protected Vector vector(int size)
+    protected AbstractVector vector(int size)
     {
         return new ArrayVector(size);
     }
 
     @Override
-    protected Vector vector(double... elements)
+    protected AbstractVector vector(double... elements)
     {
         return new ArrayVector(elements);
     }

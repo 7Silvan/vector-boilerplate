@@ -1,9 +1,8 @@
-package boilerplate.vector.third;
+package boilerplate.vector.four;
+
+import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Test;
-
-import static junit.framework.Assert.assertEquals;
-import static org.junit.Assert.assertArrayEquals;
 
 public class ListVectorTest extends VectorTest
 {
